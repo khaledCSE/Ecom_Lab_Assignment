@@ -19,7 +19,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Students</h3>
                 <div class="pull-right">
-                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                    <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span></button>
                 </div>
             </div>
             <table class="table">
@@ -30,6 +30,7 @@
                         <th><input type="text" class="form-control" placeholder="First Name" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Last Name" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Password" disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Operations" disabled></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,6 +41,10 @@
                       <td><%= info[i].first_name %></td>
                       <td><%= info[i].last_name %></td>
                       <td><%= info[i].password %></td>
+                      <td><a href="/users/student_details/edit/<%=info[i]._id %>"><button type="button" class="btn btn-primary">Edit</button></a>
+                          <a href="/users/student_details/delete/<%=info[i]._id %>"><button type="button" class="btn btn-secondary">Delete</button></a>
+                          
+                      </td>
                     </tr>
                   <% } %>
                 </tbody>

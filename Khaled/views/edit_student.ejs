@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Add Faculties</title>
+<title>Edit Student</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -21,15 +21,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 	<!-- main -->
 	<div class="main-w3layouts wrapper">
-		<h1>Add Faculties</h1>
+		<h1>Edit <%= info[0].first_name %></h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="/users/add_faculties" method="post">
-					<input class="text" type="text" name="faculty_id" placeholder="Faculty ID" required="">
-					<input class="text email" type="text" name="first_name" placeholder="First Name" required="">
-					<input class="text email" type="text" name="last_name" placeholder="Last Name" required="">
-					<input class="text" type="password" name="password" placeholder="Password" required="">
-					<input class="text w3lpass" type="password" name="password2" placeholder="Confirm Password" required="">
+				<form action="/users/add_students" method="post">
+					<input class="text" type="text" name="std_id" placeholder="Student ID" required="" value="<%= info[0].student_id %>">
+					<input class="text email" type="text" name="first_name" placeholder="First Name" required="" value="<%= info[0].first_name %>">
+					<input class="text email" type="text" name="last_name" placeholder="Last Name" required="" value="<%= info[0].last_name %>">
+					<input class="text" type="password" name="password" placeholder="Password" required="" value="<%= info[0].password %>">
+					<input class="text w3lpass" type="password" name="password2" placeholder="Confirm Password" required="" value="<%= info[0].password %>">
 					<div class="wthree-text">
 						<label class="anim">
 							<input type="checkbox" class="checkbox" required="">
@@ -37,9 +37,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="Add Faculty">
+					<input type="submit" value="Confirm Changes">
 				</form>
-				<p>Need to add students? <a href="#"> Add students now!</a></p>
+				<p>Need to add Student? <a href="#"> Add student now!</a></p>
 			</div>
 		</div>
 		<!-- copyright -->

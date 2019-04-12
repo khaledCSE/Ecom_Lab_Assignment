@@ -100,4 +100,70 @@ router.get('/faculty_details',function(req,res,next){
       }
     });
 });
+
+// Update and delete for student
+// #######################################
+
+// Update
+router.get('/student_details/edit/:id', function(req, res, next) {
+  var id = req.params.id;
+  var query={_id:id};
+
+  Users.find(query,
+    function(err, results) {
+      if (err) throw err;
+      console.log(results);
+      res.render('edit_student',{info:results});
+  });
+});
+// ########################################
+
+// Delete
+router.get('/student_details/delete/:id', function(req, res, next) {
+  var id = req.params.id;
+    var query={_id:id};
+    
+    Users.remove(query, function(err) {
+      if(err) {console.log(err)}
+      res.redirect('/users/student_details');
+    });
+});
+
+// ################################################
+
+
+// Update and delete for faculty
+// #######################################
+
+// Update
+router.get('/faculty_details/edit/:id', function(req, res, next) {
+  var id = req.params.id;
+  var query={_id:id};
+
+  Faculty.find(query,
+    function(err, results) {
+      if (err) throw err;
+      console.log(results);
+      res.render('edit_faculty',{info:results});
+  });
+});
+
+// #########################################
+
+// Delete
+router.get('/faculty_details/delete/:id',function(req,res,next){
+	var id = req.params.id;
+  	var query={_id:id};
+
+  	Faculty.remove({
+    	_id: id
+  		}, function(err) {
+    	if (err) throw err;
+    	res.redirect('/users/faculty_details');
+  });
+
+});
+// ##############################################
+// ##########################################################
+
 module.exports = router;
