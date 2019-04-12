@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Creative Colorlib SignUp Form</title>
+<title>Add Students</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -21,12 +21,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 	<!-- main -->
 	<div class="main-w3layouts wrapper">
-		<h1>Creative SignUp Form</h1>
+		<h1>Add Students</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="/users/collect_data" method="post">
-					<input class="text" type="text" name="username" placeholder="Username" required="">
-					<input class="text email" type="email" name="email" placeholder="Email" required="">
+				<form action="/users/add_students" method="post">
+					<input class="text" type="text" name="std_id" placeholder="Student ID" required="">
+					<input class="text email" type="text" name="first_name" placeholder="First Name" required="">
+					<input class="text email" type="text" name="last_name" placeholder="Last Name" required="">
 					<input class="text" type="password" name="password" placeholder="Password" required="">
 					<input class="text w3lpass" type="password" name="password2" placeholder="Confirm Password" required="">
 					<div class="wthree-text">
@@ -36,9 +37,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="SIGNUP">
+					<input type="submit" value="Add Student">
 				</form>
-				<p>Don't have an Account? <a href="#"> Login Now!</a></p>
+				<p>Need to add faculty? <a href="#"> Add faculty now!</a></p>
 			</div>
 		</div>
 		<!-- copyright -->

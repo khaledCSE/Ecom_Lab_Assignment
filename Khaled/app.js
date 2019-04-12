@@ -4,8 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Mongo instances
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+ // ##############################################
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+// Database connection
+mongoose.set('useCreateIndex', true);
+mongoose.connect('mongodb://localhost/lab_db', {useNewUrlParser: true}).then(() => console.log('db connected!')).catch((err) => console.log(err));
+var db = mongoose.connection;
+// ###############################################
 
 var app = express();
 console.log('Server Started!');
